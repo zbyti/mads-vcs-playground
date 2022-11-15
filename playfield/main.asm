@@ -25,41 +25,34 @@ counter     = $81
 
 start           INIT_SYSTEM
 
-mainLoop        VERTICAL_SYNC   ; This macro efficiently gives us 1 + 3 lines of VSYNC
+mainLoop        VERTICAL_SYNC           ; This macro efficiently gives us 1 + 3 lines of VSYNC
 
-                ldx #36         ; 36 lines of VBLANK
-@               W_SYNC          ; accessing WSYNC stops the CPU until next scanline
-                dex
-                bne @-                
+                WAIT_X_SCANLINES 30     ; 36 lines of VBLANK
+               
+                stx VBLANK              ; Disable VBLANK, X = 0
 
-                stx VBLANK      ; Disable VBLANK
-
-                mva #$82 COLUPF ; Set foreground color
+                mva #$82 COLUPF         ; Set foreground color
 
 
-                ldx #192        ; Draw the 192 scanlines
-                lda #0          ; changes every scanline
-                lda counter     ; uncomment to scroll!
-
-scanLoop        W_SYNC          ; wait for next scanline
-                sta PF0         ; set the PF1 playfield pattern register
-                sta PF1         ; set the PF1 playfield pattern register
-                sta PF2         ; set the PF2 playfield pattern register
-                stx COLUBK      ; set the background color
-                adc #1          ; increment A
+                ldx #192                ; Draw the 192 scanlines
+                lda #0                  ; changes every scanline
+                lda counter             ; uncomment to scroll!
+scanLoop        W_SYNC                  ; wait for next scanline
+                sta PF0                 ; set the PF1 playfield pattern register
+                sta PF1                 ; set the PF1 playfield pattern register
+                sta PF2                 ; set the PF2 playfield pattern register
+                stx COLUBK              ; set the background color
+                adc #1                  ; increment A
                 dex
                 bne scanLoop
 
-                mva #2 VBLANK   ; Reenable VBLANK for bottom (and top of next frame)
+                mva #2 VBLANK           ; Reenable VBLANK for bottom (and top of next frame)
 
-                ldx #30         ; 30 lines of overscan
-@               W_SYNC          ; accessing WSYNC stops the CPU until next scanline
-                dex
-                bne @-
+                WAIT_X_SCANLINES 30     ; 30 lines of overscan
 
                 inc counter
 
-                jmp mainLoop    ; Go back and do another frame
+                jmp mainLoop            ; Go back and do another frame
 
 //=============================================================================
 

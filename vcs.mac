@@ -28,6 +28,13 @@
     bne @-      ; branch until VYSNC has been reset
 .endm
 
+.macro WAIT_X_SCANLINES v
+    ldx #:v         
+@   sta WSYNC   ; accessing WSYNC stops the CPU until next scanline
+    dex
+    bne @-
+.endm
+
 /*
     Wait for Horizontal Blank
 */
