@@ -28,6 +28,10 @@
     bne @-      ; branch until VYSNC has been reset
 .endm
 
+/*
+    Wait specific number of scanelines
+    Note: Alters x register
+*/
 .macro WAIT_X_SCANLINES v
     ldx #:v         
 @   sta WSYNC   ; accessing WSYNC stops the CPU until next scanline
