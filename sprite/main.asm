@@ -55,7 +55,7 @@ mainLoop        VERTICAL_SYNC           ; This macro efficiently gives us 1 + 3 
                 */
                 ldx #192                ; Draw the 192 scanlines
                 lda #0                  ; changes every scanline
-                ldy counter	            ; changes every frame
+                ldy counter             ; changes every frame
 @               W_SYNC                  ; wait for next scanline
                 sta COLUBK              ; set the background color
                 sta GRP0                ; set sprite 0 pixels
