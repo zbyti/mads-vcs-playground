@@ -27,12 +27,11 @@ start           INIT_SYSTEM
 
 mainLoop        VERTICAL_SYNC           ; This macro efficiently gives us 1 + 3 lines of VSYNC
 
-                WAIT_X_SCANLINES 30     ; 36 lines of VBLANK
+                WAIT_X_SCANLINES 36     ; 36 lines of VBLANK
                
                 stx VBLANK              ; Disable VBLANK, X = 0
 
                 mva #$82 COLUPF         ; Set foreground color
-
 
                 ldx #192                ; Draw the 192 scanlines
                 lda #0                  ; changes every scanline
