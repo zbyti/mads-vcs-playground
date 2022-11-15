@@ -36,35 +36,29 @@ bg_color    = $81
 
 start           INIT_SYSTEM
 
-mainLoop        mva #2 VBLANK   ; Enable VBLANK (disable output)
+mainLoop        mva #2 VBLANK           ; Enable VBLANK (disable output)
 
-                sta VSYNC       ; At the beginning of the frame we set the VSYNC bit...
+                sta VSYNC               ; At the beginning of the frame we set the VSYNC bit...
 
-            :3  W_SYNC          ; And hold it on for 3 scanlines...
+            :3  W_SYNC                  ; And hold it on for 3 scanlines...
 
-                mva #0 VSYNC    ; Now we turn VSYNC off.
+                mva #0 VSYNC            ; Now we turn VSYNC off.
 
-                ldx #37         ; Now we need 37 lines of VBLANK...
-@               W_SYNC          ; accessing WSYNC stops the CPU until next scanline
-                dex
-                bne @-
+                WAIT_X_SCANLINES 37     ; Now we need 37 lines of VBLANK...
 
-                mva #0 VBLANK   ; Re-enable output (disable VBLANK)
+                mva #0 VBLANK           ; Re-enable output (disable VBLANK)
 
-                ldx #192        ; 192 scanlines are visible
+                ldx #192                ; 192 scanlines are visible
                 lda bg_color
 @               adc #1
-                sta COLUBK      ; set the background color
-                W_SYNC          ; WSYNC doesn't care what value is stored
+                sta COLUBK              ; set the background color
+                W_SYNC                  ; WSYNC doesn't care what value is stored
                 dex
                 bne @-
 
-                mva #2 VBLANK   ; Enable VBLANK again
+                mva #2 VBLANK           ; Enable VBLANK again
 
-                ldx #30         ; 30 lines of overscan to complete the frame
-@               W_SYNC
-                dex
-                bne @-
+                WAIT_X_SCANLINES 30     ; 30 lines of overscan to complete the frame
 
                 /*
                     The next frame will start with current color value - 1
