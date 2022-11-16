@@ -21,7 +21,7 @@ CARVEC          = CARADR+$ffc
 spriteHeight    = 8
 
 .zpvar          = $80
-.zpvar yPos		.byte       
+.zpvar yPos     .byte       
 
 //=============================================================================
 
