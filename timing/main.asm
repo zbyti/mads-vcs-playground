@@ -63,10 +63,7 @@ divideLoop      sbc #15                 ; subtract 15
                     the range -8 to +7.
                 */
                 eor #7
-                asl                     ; HMOVE only uses the top 4 bits, so shift by 4
-                asl
-                asl
-                asl
+            :4  asl                     ; HMOVE only uses the top 4 bits, so shift by 4
                 sta HMP0                ; The fine offset goes into HMP0
 
                 /*
