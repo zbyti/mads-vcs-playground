@@ -44,7 +44,7 @@ mainLoop        VERTICAL_SYNC
                     we're going to use TIA clocks.
                 */
                 lda counter             ; load the counter as horizontal position
-	            and #$7f                ; force range to (0-127)         
+                and #$7f                ; force range to (0-127)         
 
                 /*              
                     We're going to divide the horizontal position by 15.
@@ -53,7 +53,7 @@ mainLoop        VERTICAL_SYNC
                     (15 TIA clocks) per iteration.
                 */
                 W_SYNC                  ; 35th line
-	            sta HMCLR               ; reset the old horizontal position
+                sta HMCLR               ; reset the old horizontal position
 divideLoop      sbc #15                 ; subtract 15
                 bcs divideLoop          ; branch until negative
 
