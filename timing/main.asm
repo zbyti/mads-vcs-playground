@@ -109,7 +109,7 @@ lvScan          W_SYNC                  ; wait for next scanline
                     Clear the background color and sprites before overscan
                 */
                 stx COLUBK
-	            stx GRP0
+                stx GRP0
 
                 WAIT_X_SCANLINES 30     ; 30 lines of overscan             
 
