@@ -18,57 +18,57 @@ TIA_BASE_WRITE_ADDRESS  = TIA_BASE_ADDRESS
 
 .zpvar = TIA_BASE_WRITE_ADDRESS
 
-.nowarn .zpvar VSYNC       .byte    ; $00  0000 00x0   Vertical Sync Set-Clear
-.nowarn .zpvar VBLANK      .byte    ; $01  xx00 00x0   Vertical Blank Set-Clear
-.nowarn .zpvar WSYNC       .byte    ; $02  ---- ----   Wait for Horizontal Blank
-.nowarn .zpvar RSYNC       .byte    ; $03  ---- ----   Reset Horizontal Sync Counter
-.nowarn .zpvar NUSIZ0      .byte    ; $04  00xx 0xxx   Number-Size player/missle 0
-.nowarn .zpvar NUSIZ1      .byte    ; $05  00xx 0xxx   Number-Size player/missle 1
-.nowarn .zpvar COLUP0      .byte    ; $06  xxxx xxx0   Color-Luminance Player 0
-.nowarn .zpvar COLUP1      .byte    ; $07  xxxx xxx0   Color-Luminance Player 1
-.nowarn .zpvar COLUPF      .byte    ; $08  xxxx xxx0   Color-Luminance Playfield
-.nowarn .zpvar COLUBK      .byte    ; $09  xxxx xxx0   Color-Luminance Background
-.nowarn .zpvar CTRLPF      .byte    ; $0A  00xx 0xxx   Control Playfield, Ball, Collisions
-.nowarn .zpvar REFP0       .byte    ; $0B  0000 x000   Reflection Player 0
-.nowarn .zpvar REFP1       .byte    ; $0C  0000 x000   Reflection Player 1
-.nowarn .zpvar PF0         .byte    ; $0D  xxxx 0000   Playfield Register Byte 0
-.nowarn .zpvar PF1         .byte    ; $0E  xxxx xxxx   Playfield Register Byte 1
-.nowarn .zpvar PF2         .byte    ; $0F  xxxx xxxx   Playfield Register Byte 2
-.nowarn .zpvar RESP0       .byte    ; $10  ---- ----   Reset Player 0
-.nowarn .zpvar RESP1       .byte    ; $11  ---- ----   Reset Player 1
-.nowarn .zpvar RESM0       .byte    ; $12  ---- ----   Reset Missle 0
-.nowarn .zpvar RESM1       .byte    ; $13  ---- ----   Reset Missle 1
-.nowarn .zpvar RESBL       .byte    ; $14  ---- ----   Reset Ball
-.nowarn .zpvar AUDC0       .byte    ; $15  0000 xxxx   Audio Control 0
-.nowarn .zpvar AUDC1       .byte    ; $16  0000 xxxx   Audio Control 1
-.nowarn .zpvar AUDF0       .byte    ; $17  000x xxxx   Audio Frequency 0
-.nowarn .zpvar AUDF1       .byte    ; $18  000x xxxx   Audio Frequency 1
-.nowarn .zpvar AUDV0       .byte    ; $19  0000 xxxx   Audio Volume 0
-.nowarn .zpvar AUDV1       .byte    ; $1A  0000 xxxx   Audio Volume 1
-.nowarn .zpvar GRP0        .byte    ; $1B  xxxx xxxx   Graphics Register Player 0
-.nowarn .zpvar GRP1        .byte    ; $1C  xxxx xxxx   Graphics Register Player 1
-.nowarn .zpvar ENAM0       .byte    ; $1D  0000 00x0   Graphics Enable Missle 0
-.nowarn .zpvar ENAM1       .byte    ; $1E  0000 00x0   Graphics Enable Missle 1
-.nowarn .zpvar ENABL       .byte    ; $1F  0000 00x0   Graphics Enable Ball
-.nowarn .zpvar HMP0        .byte    ; $20  xxxx 0000   Horizontal Motion Player 0
-.nowarn .zpvar HMP1        .byte    ; $21  xxxx 0000   Horizontal Motion Player 1
-.nowarn .zpvar HMM0        .byte    ; $22  xxxx 0000   Horizontal Motion Missle 0
-.nowarn .zpvar HMM1        .byte    ; $23  xxxx 0000   Horizontal Motion Missle 1
-.nowarn .zpvar HMBL        .byte    ; $24  xxxx 0000   Horizontal Motion Ball
-.nowarn .zpvar VDELP0      .byte    ; $25  0000 000x   Vertical Delay Player 0
-.nowarn .zpvar VDELP1      .byte    ; $26  0000 000x   Vertical Delay Player 1
-.nowarn .zpvar VDELBL      .byte    ; $27  0000 000x   Vertical Delay Ball
-.nowarn .zpvar RESMP0      .byte    ; $28  0000 00x0   Reset Missle 0 to Player 0
-.nowarn .zpvar RESMP1      .byte    ; $29  0000 00x0   Reset Missle 1 to Player 1
-.nowarn .zpvar HMOVE       .byte    ; $2A  ---- ----   Apply Horizontal Motion
-.nowarn .zpvar HMCLR       .byte    ; $2B  ---- ----   Clear Horizontal Move Registers
-.nowarn .zpvar CXCLR       .byte    ; $2C  ---- ----   Clear Collision Latche 
+.zpvar VSYNC       .byte            ; $00  0000 00x0   Vertical Sync Set-Clear
+.zpvar VBLANK      .byte            ; $01  xx00 00x0   Vertical Blank Set-Clear
+.zpvar WSYNC       .byte            ; $02  ---- ----   Wait for Horizontal Blank
+.zpvar RSYNC       .byte            ; $03  ---- ----   Reset Horizontal Sync Counter
+.zpvar NUSIZ0      .byte            ; $04  00xx 0xxx   Number-Size player/missle 0
+.zpvar NUSIZ1      .byte            ; $05  00xx 0xxx   Number-Size player/missle 1
+.zpvar COLUP0      .byte            ; $06  xxxx xxx0   Color-Luminance Player 0
+.zpvar COLUP1      .byte            ; $07  xxxx xxx0   Color-Luminance Player 1
+.zpvar COLUPF      .byte            ; $08  xxxx xxx0   Color-Luminance Playfield
+.zpvar COLUBK      .byte            ; $09  xxxx xxx0   Color-Luminance Background
+.zpvar CTRLPF      .byte            ; $0A  00xx 0xxx   Control Playfield, Ball, Collisions
+.zpvar REFP0       .byte            ; $0B  0000 x000   Reflection Player 0
+.zpvar REFP1       .byte            ; $0C  0000 x000   Reflection Player 1
+.zpvar PF0         .byte            ; $0D  xxxx 0000   Playfield Register Byte 0
+.zpvar PF1         .byte            ; $0E  xxxx xxxx   Playfield Register Byte 1
+.zpvar PF2         .byte            ; $0F  xxxx xxxx   Playfield Register Byte 2
+.zpvar RESP0       .byte            ; $10  ---- ----   Reset Player 0
+.zpvar RESP1       .byte            ; $11  ---- ----   Reset Player 1
+.zpvar RESM0       .byte            ; $12  ---- ----   Reset Missle 0
+.zpvar RESM1       .byte            ; $13  ---- ----   Reset Missle 1
+.zpvar RESBL       .byte            ; $14  ---- ----   Reset Ball
+.zpvar AUDC0       .byte            ; $15  0000 xxxx   Audio Control 0
+.zpvar AUDC1       .byte            ; $16  0000 xxxx   Audio Control 1
+.zpvar AUDF0       .byte            ; $17  000x xxxx   Audio Frequency 0
+.zpvar AUDF1       .byte            ; $18  000x xxxx   Audio Frequency 1
+.zpvar AUDV0       .byte            ; $19  0000 xxxx   Audio Volume 0
+.zpvar AUDV1       .byte            ; $1A  0000 xxxx   Audio Volume 1
+.zpvar GRP0        .byte            ; $1B  xxxx xxxx   Graphics Register Player 0
+.zpvar GRP1        .byte            ; $1C  xxxx xxxx   Graphics Register Player 1
+.zpvar ENAM0       .byte            ; $1D  0000 00x0   Graphics Enable Missle 0
+.zpvar ENAM1       .byte            ; $1E  0000 00x0   Graphics Enable Missle 1
+.zpvar ENABL       .byte            ; $1F  0000 00x0   Graphics Enable Ball
+.zpvar HMP0        .byte            ; $20  xxxx 0000   Horizontal Motion Player 0
+.zpvar HMP1        .byte            ; $21  xxxx 0000   Horizontal Motion Player 1
+.zpvar HMM0        .byte            ; $22  xxxx 0000   Horizontal Motion Missle 0
+.zpvar HMM1        .byte            ; $23  xxxx 0000   Horizontal Motion Missle 1
+.zpvar HMBL        .byte            ; $24  xxxx 0000   Horizontal Motion Ball
+.zpvar VDELP0      .byte            ; $25  0000 000x   Vertical Delay Player 0
+.zpvar VDELP1      .byte            ; $26  0000 000x   Vertical Delay Player 1
+.zpvar VDELBL      .byte            ; $27  0000 000x   Vertical Delay Ball
+.zpvar RESMP0      .byte            ; $28  0000 00x0   Reset Missle 0 to Player 0
+.zpvar RESMP1      .byte            ; $29  0000 00x0   Reset Missle 1 to Player 1
+.zpvar HMOVE       .byte            ; $2A  ---- ----   Apply Horizontal Motion
+.zpvar HMCLR       .byte            ; $2B  ---- ----   Clear Horizontal Move Registers
+.zpvar CXCLR       .byte            ; $2C  ---- ----   Clear Collision Latche 
  
 ;-------------------------------------------------------------------------------   
 
 .zpvar = TIA_BASE_READ_ADDRESS
 
-                            ;                                  bit 7   bit 6
+                                    ;                                  bit 7   bit 6
 .nowarn .zpvar CXM0P       .byte    ; $00  xx00 0000   Read Collision  M0-P1   M0-P0
 .nowarn .zpvar CXM1P       .byte    ; $01  xx00 0000                   M1-P0   M1-P1
 .nowarn .zpvar CXP0FB      .byte    ; $02  xx00 0000                   P0-PF   P0-BL
