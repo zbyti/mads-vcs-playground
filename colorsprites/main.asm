@@ -33,8 +33,8 @@ start           INIT_SYSTEM
 
                 mva #5 yPos
 
-mainLoop        lsr SWCHB	            ; test Game Reset switch
-                bcc start	            ; reset?
+mainLoop        lsr SWCHB               ; test Game Reset switch
+                bcc start               ; reset?
 
                 VERTICAL_SYNC           ; 1 + 3 lines of VSYNC
 
@@ -62,7 +62,7 @@ inSprite        tay		                ; local coord -> Y
 
 //=============================================================================
 
-dataframe0                                  ; Cat-head graphics data
+dataframe0                              ; Cat-head graphics data
     .byte 0                             ; zero padding, also clears register
     .byte %00111100
     .byte %01000010
