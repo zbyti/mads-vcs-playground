@@ -49,7 +49,7 @@ lvScan          txa                     ; X -> A
                 lda #0                  ; not in sprite, load 0
 inSprite        tay		                ; local coord -> Y
                 lda dataframe0,y        ; lookup color
-                sta WSYNC               ; sync w/ scanline
+                W_SYNC                  ; sync w/ scanline
                 sta GRP0                ; store bitmap
                 lda colorFrame0,y       ; lookup color
                 sta COLUP0              ; store color
@@ -63,26 +63,26 @@ inSprite        tay		                ; local coord -> Y
 //=============================================================================
 
 dataframe0                              ; Cat-head graphics data
-    .byte 0                             ; zero padding, also clears register
-    .byte %00111100
-    .byte %01000010
-    .byte %11100111
-    .byte %11111111
-    .byte %10011001
-    .byte %01111110
-    .byte %11000011
-    .byte %10000001
+    .by 0                               ; zero padding, also clears register
+    .by %00111100
+    .by %01000010
+    .by %11100111
+    .by %11111111
+    .by %10011001
+    .by %01111110
+    .by %11000011
+    .by %10000001   
 
 colorFrame0                             ; Cat-head color data
-    .byte 0                             ; unused (for now)
-    .byte $AE
-    .byte $AC
-    .byte $A8
-    .byte $AC
-    .byte $8E
-    .byte $8E
-    .byte $98
-    .byte $94
+    .by 0                               ; unused (for now)
+    .he AE
+    .he AC
+    .he A8
+    .he AC
+    .he 8E
+    .he 8E
+    .he 98
+    .he 94
 
 //=============================================================================
 
