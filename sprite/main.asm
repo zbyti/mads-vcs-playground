@@ -86,7 +86,7 @@ mainLoop        VERTICAL_SYNC           ; This macro efficiently gives us 1 + 3 
                 org	CARVEC
                 
                 .word start     ; reset vector
-                .word start     ; break vector                
+                .word start     ; interrupt vector at $fffe (unused in VCS)                
 
 //=============================================================================
 

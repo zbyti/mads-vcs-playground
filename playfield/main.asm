@@ -61,7 +61,7 @@ scanLoop        W_SYNC                  ; wait for next scanline
                 org	CARVEC
                 
                 .word start     ; reset vector
-                .word start     ; break vector                
+                .word start     ; interrupt vector at $fffe (unused in VCS)                
 
 //=============================================================================
 

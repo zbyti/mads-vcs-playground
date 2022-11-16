@@ -76,7 +76,7 @@ mainLoop        mva #2 VBLANK           ; Enable VBLANK (disable output)
                 org	CARVEC
                 
                 .word start     ; reset vector
-                .word start     ; break vector                
+                .word start     ; interrupt vector at $fffe (unused in VCS)                
 
 //=============================================================================
 

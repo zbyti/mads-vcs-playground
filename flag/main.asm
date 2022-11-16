@@ -43,7 +43,7 @@ mainLoop        mva #$88 COLUBK
                 org	CARVEC
                 
                 .word start     ; reset vector
-                .word start     ; break vector                
+                .word start     ; interrupt vector at $fffe (unused in VCS)                
 
 //=============================================================================
 
