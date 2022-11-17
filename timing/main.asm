@@ -53,7 +53,7 @@ mainLoop        VERTICAL_SYNC
                     (15 TIA clocks) per iteration.
                 */
                 W_SYNC                  ; 35th line
-                sta HMCLR               ; reset the old horizontal position
+                HM_CLR                  ; reset the old horizontal position
 divideLoop      sbc #15                 ; subtract 15
                 bcs divideLoop          ; branch until negative
 
@@ -71,13 +71,13 @@ divideLoop      sbc #15                 ; subtract 15
                     remember is solely based on timing. If you rearrange any of the
                     previous instructions, position 0 won't be exactly on the left side.
                 */
-                sta RESP0
+                RES_P0
 
                 /*                
                     Finally we'll do a WSYNC followed by HMOVE to apply the fine offset.
                 */
                 W_SYNC                  ; 36th line
-                sta HMOVE               ; apply offset
+                H_MOVE                  ; apply offset
 
                 /*
                     We'll see this method again, and it can be made into a subroutine
